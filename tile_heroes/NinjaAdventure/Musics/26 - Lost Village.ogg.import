@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/26 - Lost Village.ogg-b23f634909de617c084ceafe33b13a5d.oggstr"
+
+[deps]
+
+source_file="res://NinjaAdventure/Musics/26 - Lost Village.ogg"
+dest_files=[ "res://.import/26 - Lost Village.ogg-b23f634909de617c084ceafe33b13a5d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

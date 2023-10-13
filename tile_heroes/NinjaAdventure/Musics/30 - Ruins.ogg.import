@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/30 - Ruins.ogg-48ae50e66fd9d37fb3ea52795caa0e54.oggstr"
+
+[deps]
+
+source_file="res://NinjaAdventure/Musics/30 - Ruins.ogg"
+dest_files=[ "res://.import/30 - Ruins.ogg-48ae50e66fd9d37fb3ea52795caa0e54.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
