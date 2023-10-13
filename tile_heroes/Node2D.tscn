@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Pathfinder.gd" type="Script" id=1]
 [ext_resource path="res://NinjaAdventure/Actor/Characters/GoldKnight/SpriteSheet.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://active.png" type="Texture" id=9]
 [ext_resource path="res://deny.png" type="Texture" id=10]
 [ext_resource path="res://Use.png" type="Texture" id=11]
+[ext_resource path="res://Camera2D.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetFloor.png 0"
@@ -74,6 +75,7 @@ script = ExtResource( 1 )
 position = Vector2( 109, 67 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
+script = ExtResource( 12 )
 
 [node name="Cursor" type="Position2D" parent="."]
 script = ExtResource( 8 )
