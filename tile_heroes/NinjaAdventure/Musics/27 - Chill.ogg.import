@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/27 - Chill.ogg-a306b3fa805fd992f74043b2174b3018.oggstr"
+
+[deps]
+
+source_file="res://NinjaAdventure/Musics/27 - Chill.ogg"
+dest_files=[ "res://.import/27 - Chill.ogg-a306b3fa805fd992f74043b2174b3018.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
