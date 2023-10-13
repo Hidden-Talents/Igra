@@ -1,12 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Pathfinder.gd" type="Script" id=1]
-[ext_resource path="res://NinjaAdventure/Actor/Characters/GoldKnight/SpriteSheet.png" type="Texture" id=2]
+[ext_resource path="res://Global/world_map.gd" type="Script" id=1]
+[ext_resource path="res://Global/Hero.tscn" type="PackedScene" id=2]
 [ext_resource path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloor.png" type="Texture" id=3]
-[ext_resource path="res://unit.gd" type="Script" id=4]
 [ext_resource path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetNature.png" type="Texture" id=5]
-[ext_resource path="res://NinjaAdventure/Actor/Characters/BlackNinjaMage/SpriteSheet.png" type="Texture" id=6]
-[ext_resource path="res://NinjaAdventure/FX/Elemental/Flam/SpriteSheet.png" type="Texture" id=7]
 [ext_resource path="res://Cursor.gd" type="Script" id=8]
 [ext_resource path="res://active.png" type="Texture" id=9]
 [ext_resource path="res://deny.png" type="Texture" id=10]
@@ -115,10 +112,6 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 32, 32 )
-
 [node name="GlobalMap" type="Node2D"]
 
 [node name="Field" type="TileMap" parent="."]
@@ -157,60 +150,13 @@ texture = ExtResource( 10 )
 [node name="use" type="Sprite" parent="Cursor"]
 texture = ExtResource( 11 )
 
-[node name="Units" type="Node2D" parent="."]
-
-[node name="Unit" type="Position2D" parent="Units"]
-position = Vector2( 39, 57 )
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="Units/Unit"]
-position = Vector2( -8, -8 )
-texture = ExtResource( 2 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
-
-[node name="Ready_icon" type="Sprite" parent="Units/Unit"]
-position = Vector2( 0, -16 )
-scale = Vector2( 0.46875, 0.46875 )
-texture = SubResource( 3 )
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[node name="Unit2" type="Position2D" parent="Units"]
-position = Vector2( 87, 41 )
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="Units/Unit2"]
-position = Vector2( -8, -8 )
-texture = ExtResource( 6 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
-
-[node name="Ready_icon" type="Sprite" parent="Units/Unit2"]
-position = Vector2( 0, -16 )
-scale = Vector2( 0.46875, 0.46875 )
-texture = SubResource( 3 )
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[node name="Unit3" type="Position2D" parent="Units"]
-position = Vector2( 169, 39 )
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="Units/Unit3"]
-position = Vector2( -8, -7 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
-
-[node name="Ready_icon" type="Sprite" parent="Units/Unit3"]
-position = Vector2( 0, -16 )
-scale = Vector2( 0.46875, 0.46875 )
-texture = SubResource( 3 )
-region_rect = Rect2( 0, 0, 32, 32 )
-
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Player1" parent="Players" instance=ExtResource( 17 )]
 
+[node name="Hero" parent="Players/Player1" instance=ExtResource( 2 )]
+position = Vector2( 57, 6 )
+
 [node name="Player2" parent="Players" instance=ExtResource( 17 )]
+
+[node name="Units" type="Node2D" parent="."]

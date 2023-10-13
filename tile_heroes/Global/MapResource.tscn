@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://images/resources/special_resource.png" type="Texture" id=1]
+[ext_resource path="res://images/resources/wood_resource.png" type="Texture" id=2]
+[ext_resource path="res://images/resources/stone_resource.png" type="Texture" id=3]
+[ext_resource path="res://images/resources/gold_resource.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Position2D
+
+enum Res_Type {WOOD, STONE, SPECIAL, GOLD}
+
+var type
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimatedSprite.frame = $AnimatedSprite.frames[type]
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Position2D" type="Position2D"]
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+speed_scale = 0.0
