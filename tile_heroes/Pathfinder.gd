@@ -11,6 +11,8 @@ var path_end_position = Vector2() setget _set_path_end_position
 
 var _point_path = []
 
+var is_clickable = true
+
 var units
 
 # You can only create an AStar node from code, not from the Scene tab.
@@ -30,12 +32,15 @@ func _ready():
 func units_become_obstacles():
 	for i in range(len(units)):
 		if units[i]._is_chosen == false:
-			print(world_to_map(units[i].position))
 			obstacles.append(world_to_map(units[i].position))
+			astar_delete_cell(world_to_map(units[i].position), walkable_cells_list)
+
 			
 func units_are_not_obstacles():
 	for i in range(len(units)-1):
 		obstacles.pop_back()
+	astar_connect_walkable_cells(walkable_cells_list)
+
 
 # Loops through all cells within the map's bounds and
 # adds all points to the astar_node, except the obstacles.
@@ -57,6 +62,13 @@ func astar_add_walkable_cells(obstacle_list = []):
 			astar_node.add_point(point_index, Vector3(point.x, point.y, 0.0))
 	return points_array
 
+
+
+func astar_delete_cell(point, point_list):
+	for i in range(len(point_list)):
+		astar_node.disconnect_points(calculate_point_index(point), calculate_point_index(point_list[i]), true)
+	print(calculate_point_index(point))
+	print(astar_node.get_point_connections(calculate_point_index(point)))
 
 # Once you added all points to the AStar node, you've got to connect them.
 # The points don't have to be on a grid: you can use this class
