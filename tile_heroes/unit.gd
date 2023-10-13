@@ -43,29 +43,33 @@ func sprite_hide(sprite):
 
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
-		var global_mouse_pos = get_global_mouse_position()
-		var mouse_pos = obstacles_path.world_to_map(global_mouse_pos)
-		var hero_pos =  obstacles_path.world_to_map(global_position)
-		if mouse_pos == hero_pos:
-			_is_chosen = true
-#			obstacles_path.units_become_obstacles()
-			sprite_show($Ready_icon)
-			return
-		if _is_chosen == true:
-			_target_position = global_mouse_pos
-			_change_state(States.FOLLOW)
-			_is_chosen = false
-			sprite_hide($Ready_icon)
-#			obstacles_path.units_are_not_obstacles()
+			var global_mouse_pos = get_global_mouse_position()
+			var mouse_pos = obstacles_path.world_to_map(global_mouse_pos)
+			var hero_pos =  obstacles_path.world_to_map(global_position)
+			if mouse_pos == hero_pos:
+				if obstacles_path.is_clickable == true:
+					_is_chosen = true
+					obstacles_path.units_become_obstacles()
+					sprite_show($Ready_icon)
+					obstacles_path.is_clickable = false
+					return
+			if _is_chosen == true:
+				_target_position = global_mouse_pos
+				_change_state(States.FOLLOW)
+				_is_chosen = false
+				sprite_hide($Ready_icon)
+				obstacles_path.units_are_not_obstacles()
+				yield(get_tree().create_timer(0.01), "timeout") #delay
+				obstacles_path.is_clickable = true
 			
+	
 	if event.is_action_pressed("right_click"):
-#		if _is_chosen == true:
-#			obstacles_path.units_are_not_obstacles()
+		if _is_chosen == true:
+			obstacles_path.units_are_not_obstacles()
+			obstacles_path.is_clickable = true
 		_is_chosen = false
 		sprite_hide($Ready_icon)
 		
-#	if event.is_action_pressed("ui_accept"):
-#		obstacles_path.astar_destoy_all_connections()
 
 func _move_to(world_position):
 	var desired_velocity = (world_position - position).normalized() * speed
