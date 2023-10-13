@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Pathfinder.gd" type="Script" id=1]
 [ext_resource path="res://NinjaAdventure/Actor/Characters/GoldKnight/SpriteSheet.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://active.png" type="Texture" id=9]
 [ext_resource path="res://deny.png" type="Texture" id=10]
 [ext_resource path="res://Use.png" type="Texture" id=11]
+[ext_resource path="res://NinjaAdventure/Actor/Characters/DarkNinja/SpriteSheet.png" type="Texture" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetFloor.png 0"
@@ -118,6 +119,23 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="Ready_icon" type="Sprite" parent="Units/Unit2"]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.46875, 0.46875 )
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Unit3" type="Position2D" parent="Units"]
+position = Vector2( 169, 39 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Units/Unit3"]
+position = Vector2( -8, -7 )
+texture = ExtResource( 12 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Ready_icon" type="Sprite" parent="Units/Unit3"]
 position = Vector2( 0, -16 )
 scale = Vector2( 0.46875, 0.46875 )
 texture = SubResource( 3 )
