@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+[gd_scene load_steps=16 format=2]
+=======
 [gd_scene load_steps=22 format=2]
+>>>>>>> 09f7f7632fc43563df3a36ea6355cea5876791e2
 
-[ext_resource path="res://Pathfinder.gd" type="Script" id=1]
+[ext_resource path="res://global/world_map.gd" type="Script" id=1]
 [ext_resource path="res://NinjaAdventure/Actor/Characters/GoldKnight/SpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloor.png" type="Texture" id=3]
 [ext_resource path="res://unit.gd" type="Script" id=4]
@@ -11,12 +15,16 @@
 [ext_resource path="res://active.png" type="Texture" id=9]
 [ext_resource path="res://deny.png" type="Texture" id=10]
 [ext_resource path="res://Use.png" type="Texture" id=11]
+<<<<<<< HEAD
+[ext_resource path="res://global/Hero.tscn" type="PackedScene" id=12]
+=======
 [ext_resource path="res://Camera2D.gd" type="Script" id=12]
 [ext_resource path="res://images/resources/wood_resource.png" type="Texture" id=13]
 [ext_resource path="res://images/resources/special_resource.png" type="Texture" id=14]
 [ext_resource path="res://images/resources/stone_resource.png" type="Texture" id=15]
 [ext_resource path="res://images/resources/gold_resource.png" type="Texture" id=16]
 [ext_resource path="res://Global/Player.tscn" type="PackedScene" id=17]
+>>>>>>> 09f7f7632fc43563df3a36ea6355cea5876791e2
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetFloor.png 0"
@@ -193,6 +201,10 @@ scale = Vector2( 0.46875, 0.46875 )
 texture = SubResource( 3 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
+<<<<<<< HEAD
+[node name="Hero" parent="Units" instance=ExtResource( 12 )]
+position = Vector2( 72, 55 )
+=======
 [node name="Unit3" type="Position2D" parent="Units"]
 position = Vector2( 169, 39 )
 script = ExtResource( 4 )
@@ -214,3 +226,4 @@ region_rect = Rect2( 0, 0, 32, 32 )
 [node name="Player1" parent="Players" instance=ExtResource( 17 )]
 
 [node name="Player2" parent="Players" instance=ExtResource( 17 )]
+>>>>>>> 09f7f7632fc43563df3a36ea6355cea5876791e2
