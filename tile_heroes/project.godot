@@ -31,10 +31,14 @@ right_click={
  ]
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 move_next={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":81,"unicode":0,"echo":false,"script":null)
 =======
+=======
+
+>>>>>>> parent of 09f7f76 (DimOOOn (#5))
 cam_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
@@ -60,6 +64,7 @@ cam_down={
 >>>>>>> 09f7f7632fc43563df3a36ea6355cea5876791e2
  ]
 }
+
 
 [physics]
 
